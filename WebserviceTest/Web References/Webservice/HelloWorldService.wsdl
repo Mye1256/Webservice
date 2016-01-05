@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://helloworld/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="HelloWorldService" targetNamespace="http://helloworld/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:1234/services?xsd=1" namespace="http://helloworld/" />
+    </xsd:schema>
+  </types>
+  <message name="getWsdlObject" />
+  <message name="getWsdlObjectResponse">
+    <part name="return" type="tns:wsdlObject" />
+  </message>
+  <message name="getServerTimeString" />
+  <message name="getServerTimeStringResponse">
+    <part name="return" type="xsd:string" />
+  </message>
+  <portType name="IHelloWorld">
+    <operation name="getWsdlObject">
+      <input wsam:Action="http://helloworld/IHelloWorld/getWsdlObjectRequest" message="tns:getWsdlObject" />
+      <output wsam:Action="http://helloworld/IHelloWorld/getWsdlObjectResponse" message="tns:getWsdlObjectResponse" />
+    </operation>
+    <operation name="getServerTimeString">
+      <input wsam:Action="http://helloworld/IHelloWorld/getServerTimeStringRequest" message="tns:getServerTimeString" />
+      <output wsam:Action="http://helloworld/IHelloWorld/getServerTimeStringResponse" message="tns:getServerTimeStringResponse" />
+    </operation>
+  </portType>
+  <binding name="HelloWorldPortBinding" type="tns:IHelloWorld">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <operation name="getWsdlObject">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" namespace="http://helloworld/" />
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://helloworld/" />
+      </output>
+    </operation>
+    <operation name="getServerTimeString">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" namespace="http://helloworld/" />
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://helloworld/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="HelloWorldService">
+    <port name="HelloWorldPort" binding="tns:HelloWorldPortBinding">
+      <soap:address location="http://localhost:1234/services" />
+    </port>
+  </service>
+</definitions>

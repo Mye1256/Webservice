@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://helloworld/" targetNamespace="http://helloworld/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="wsdlObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="matches" nillable="true" type="tns:gameDTO" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="teams" nillable="true" type="tns:teamDTO" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tournaments" nillable="true" type="tns:tournamentDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="gameDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:genericDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="externTeam1" type="xs:string" />
+          <xs:element minOccurs="0" name="externTeam2" type="xs:string" />
+          <xs:element minOccurs="0" name="internTeam1" type="xs:string" />
+          <xs:element minOccurs="0" name="internTeam2" type="xs:string" />
+          <xs:element minOccurs="0" name="published" type="xs:string" />
+          <xs:element minOccurs="0" name="resultTeam1" type="xs:string" />
+          <xs:element minOccurs="0" name="resultTeam2" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="teams" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tournament" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="genericDTO" abstract="true">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:string" />
+      <xs:element minOccurs="0" name="version" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="teamDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:genericDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="department" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="members" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element minOccurs="0" name="trainer" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="tournamentDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:genericDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="date" type="xs:string" />
+          <xs:element minOccurs="0" name="department" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="games" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="teams" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

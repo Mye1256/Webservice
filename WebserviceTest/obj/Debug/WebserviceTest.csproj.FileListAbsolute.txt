@@ -1,0 +1,6 @@
+c:\users\media\documents\visual studio 2015\Projects\WebserviceTest\WebserviceTest\bin\Debug\WebserviceTest.exe.config
+c:\users\media\documents\visual studio 2015\Projects\WebserviceTest\WebserviceTest\bin\Debug\WebserviceTest.exe
+c:\users\media\documents\visual studio 2015\Projects\WebserviceTest\WebserviceTest\bin\Debug\WebserviceTest.pdb
+c:\users\media\documents\visual studio 2015\Projects\WebserviceTest\WebserviceTest\obj\Debug\WebserviceTest.csprojResolveAssemblyReference.cache
+c:\users\media\documents\visual studio 2015\Projects\WebserviceTest\WebserviceTest\obj\Debug\WebserviceTest.exe
+c:\users\media\documents\visual studio 2015\Projects\WebserviceTest\WebserviceTest\obj\Debug\WebserviceTest.pdb
